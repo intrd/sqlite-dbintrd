@@ -81,4 +81,4 @@ function vd($var){
 
 ### Todolist
 
-* SELECTS are propagating to Childs at application side, if know do it at SQLite side w/ a single JOIN query to return child array objects, please commit! (look nearby DBIntrd.php line 160) 
+* SELECTS are propagating to Childs at application side, do the same at SQLite side w/ a single JOIN query to return child array objects (look nearby DBIntrd.php line 160) 
