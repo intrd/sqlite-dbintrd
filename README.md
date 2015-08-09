@@ -4,11 +4,20 @@ Tired of spending a lot of time manually creating PHP objects and methods(get/se
 
 DBIntrd is magic way to automatically create objects and persists data at SQLite3 tables.
 
-### Official post
-* Link: http://dann.com.br/dbintrd-framework-sqlite-to-php-objects/
+### Package details
 
-### GitHub
-* Source code: https://github.com/intrd/sqlite-dbintrd
+* package: DBIntrd
+* version: 1.6
+* category: misc
+* author: intrd - http://dann.com.br/
+* link: https://github.com/intrd/misc/tree/master/DBIntrd
+* see: official post - http://dann.com.br/dbintrd-framework-sqlite-to-php-objects/
+* copyright: 2015 intrd
+* license: Creative Commons Attribution-ShareAlike 4.0 International License - http://creativecommons.org/licenses/by-sa/4.0/
+
+### Changelog
+
+* Github commit log: https://github.com/intrd/sqlite-dbintrd/commits/master
 
 ### Usage sample (sample.php)
 ```php
@@ -70,17 +79,6 @@ function vd($var){
 }
 ```
 
-### TodoList
+### Todolist
 
 * SELECTS are propagating to Childs at application side, if know do it at SQLite side w/ a single JOIN query to return child array objects, please commit! (look nearby DBIntrd.php line 160) 
-
-### Package details
-
-* package: DBIntrd
-* version: 1.6
-* category: misc
-* author: intrd - http://dann.com.br/
-* link: https://github.com/intrd/misc/tree/master/DBIntrd
-* see: http://dann.com.br/dbintrd-framework-sqlite-to-php-objects/
-* copyright: 2015 intrd
-* license: Creative Commons Attribution-ShareAlike 4.0 International License - http://creativecommons.org/licenses/by-sa/4.0/
