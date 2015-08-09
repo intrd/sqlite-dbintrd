@@ -9,8 +9,8 @@ DBIntrd is magic way to automatically create objects and persists data at SQLite
 * package: DBIntrd
 * version: 1.6
 * category: misc
-* author: intrd - http://dann.com.br/
-* link: https://github.com/intrd/misc/tree/master/DBIntrd
+* author: intrd - http://dann.com.br
+* link: https://github.com/intrd/sqlite-dbintrd/
 * see: official post - http://dann.com.br/dbintrd-framework-sqlite-to-php-objects/
 * copyright: 2015 intrd
 * license: Creative Commons Attribution-ShareAlike 4.0 International License - http://creativecommons.org/licenses/by-sa/4.0/
