@@ -1,17 +1,4 @@
-## DBIntrd - Simple PHP framework for SQLite3 databases
-
-Tired of spending a lot of time manually creating PHP objects and methods(get/set/save..) to connect a SQLite database? 
-
-DBIntrd is magic way to automatically create objects and persists data at SQLite3 tables.
-
-### Official post
-* Link: http://dann.com.br/dbintrd-framework-sqlite-to-php-objects/
-
-### GitHub
-* Source code: https://github.com/intrd/misc/tree/master/DBIntrd
-
-### Usage sample (sample.php)
-```php
+<?php
 /**
  * sample.php for DBIntrd - Simple SQLite3 PHP Framework
  */
@@ -19,7 +6,7 @@ DBIntrd is magic way to automatically create objects and persists data at SQLite
 $root=dirname(__FILE__)."/"; //root absolute path
 $db_path=$root.'database.dat'; //path of SQLite database.dat (sample database included)
 $debug=true; //enable SQL queries debug
-require 'dbintrd.php'; //calling DBIntrd Framework
+require 'DBIntrd.php'; //calling DBIntrd Framework
 
 /*
  * GET ALL
@@ -68,19 +55,4 @@ vd($orders); //print data
 function vd($var){ 
   echo"<pre>";var_dump($var);echo"</pre>";
 }
-```
-
-### TodoList
-
-* SELECTS are propagating to Childs at application side, if know do it at SQLite side w/ a single JOIN query to return child array objects, please commit! (look nearby DBIntrd.php line 160) 
-
-### Package details
-
-@package: DBIntrd
-@version: 1.6
-@category: misc
-@author: intrd - http://dann.com.br/
-@link: https://github.com/intrd/misc/tree/master/DBIntrd
-@see: http://dann.com.br/dbintrd-framework-sqlite-to-php-objects/
-@copyright: 2015 intrd
-@license: Creative Commons Attribution-ShareAlike 4.0 International License - http://creativecommons.org/licenses/by-sa/4.0/
+?>
