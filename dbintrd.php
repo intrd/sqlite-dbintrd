@@ -7,7 +7,7 @@
  * 
 * @package DBIntrd
 * @version 1.6
-* @category misc
+* @category framework
 * @author intrd - http://dann.com.br/
 * @link https://github.com/intrd/sqlite-dbintrd/
 * @see http://dann.com.br/dbintrd-framework-sqlite-to-php-objects/
