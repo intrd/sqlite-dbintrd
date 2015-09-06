@@ -32,6 +32,7 @@ apt-get install php5-curl php5-sqlite php5-cli
 ```
 git clone [all git dependencies, described at header]
 ex: git clone https://github.com/intrd/php-adminer/ 
+obs: clone at ../ (outside this main directory)
 
 ```
 
