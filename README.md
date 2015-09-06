@@ -22,7 +22,6 @@ DBIntrd is magic way to automatically create objects and persists data at SQLite
 * Github commit log: https://github.com/intrd/sqlite-dbintrd/commits/master
 
 ## System installation
-System:
 ```
 apt-get update & apt-get upgrade
 apt-get install git
