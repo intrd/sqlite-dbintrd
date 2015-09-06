@@ -14,10 +14,27 @@ DBIntrd is magic way to automatically create objects and persists data at SQLite
 * see: official post - http://dann.com.br/dbintrd-framework-sqlite-to-php-objects/
 * copyright: 2015 intrd
 * license: Creative Commons Attribution-ShareAlike 4.0 International License - http://creativecommons.org/licenses/by-sa/4.0/
+* Dependencies: 
+*   https://github.com/intrd/php-adminer/
 
 ### Changelog
 
 * Github commit log: https://github.com/intrd/sqlite-dbintrd/commits/master
+
+## System installation
+System:
+```
+apt-get update & apt-get upgrade
+apt-get install git
+apt-get install php5-curl php5-sqlite php5-cli
+```
+
+## Dependencies installation
+```
+git clone [all git dependencies, described at header]
+ex: git clone https://github.com/intrd/php-adminer/ 
+
+```
 
 ### Usage sample (sample.php)
 ```php
