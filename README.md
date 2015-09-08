@@ -24,8 +24,10 @@ DBIntrd is magic way to automatically create objects and persists data at SQLite
 ## System installation
 ```
 apt-get update & apt-get upgrade
-apt-get install git
 apt-get install php5-curl php5-sqlite php5-cli
+
+apt-get install git
+git clone https://github.com/intrd/sqlite-dbintrd/
 ```
 **Attention**: stay outside main project directory and follow these commands below..
 
