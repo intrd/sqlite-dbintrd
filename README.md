@@ -27,13 +27,12 @@ apt-get update & apt-get upgrade
 apt-get install git
 apt-get install php5-curl php5-sqlite php5-cli
 ```
+**Attention**: stay outside main project directory and follow these commands below..
 
 ## Dependencies installation
 ```
-git clone [all git dependencies, described at header]
-ex: git clone https://github.com/intrd/php-adminer/ 
-obs: clone at ../ (outside this main directory)
-
+git clone [all git dependencies listed at header]
+ex: git clone https://github.com/intrd/php-common/
 ```
 
 ### Usage sample (sample.php)
