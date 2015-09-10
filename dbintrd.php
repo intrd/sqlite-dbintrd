@@ -156,7 +156,7 @@ class data extends DBIntrd {
         $filter=explode("|",$filter);
         $results=$this->queryDB("SELECT * FROM ".DBIntrd::$table." WHERE ".$filter[0]."='".$filter[1]."'");
       }else{
-        $results=$this->queryDB("SELECT * FROM ".DBIntrd::$table." WHERE ".$filter."'"); //special filter case
+        $results=$this->queryDB("SELECT * FROM ".DBIntrd::$table." WHERE ".$filter); //special filter case
       }
       //vd($results);
       //die;
