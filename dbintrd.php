@@ -152,8 +152,12 @@ class data extends DBIntrd {
       $results=$this->queryDB("SELECT * FROM ".DBIntrd::$table);
     }
     if($filter){
-      $filter=explode("|",$filter);
-      $results=$this->queryDB("SELECT * FROM ".DBIntrd::$table." WHERE ".$filter[0]."='".$filter[1]."'");
+      if (strpos($filter,"|")!==false){
+        $filter=explode("|",$filter);
+        $results=$this->queryDB("SELECT * FROM ".DBIntrd::$table." WHERE ".$filter[0]."='".$filter[1]."'");
+      }else{
+        $results=$this->queryDB("SELECT * FROM ".DBIntrd::$table." WHERE ".$filter."'"); //special filter case
+      }
       //vd($results);
       //die;
       /* trying to do child objects w/ a SINGLE QUERY.. no success..

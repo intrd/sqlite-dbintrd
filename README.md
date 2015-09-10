@@ -81,6 +81,7 @@ $user->save(); //INSERT this object on database (null or false = INSERT, true = 
  * GET ALL w/ FILTER
  */
 $users = new data("users","filter:email|another@dann.com.br"); //CREATE an new object w/ database structure+data(table=users WHERE email=nhe@dann.com.br, filtering email=nhe@dann.com.br)
+//$users = new data("users","filter:email='another@dann.com.br' and email='asd@dann.com.br'"); //for raw filter case
 vd($users); //print data
 
 /*
