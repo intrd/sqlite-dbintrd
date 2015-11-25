@@ -51,6 +51,7 @@ class DBIntrd {
     global $debug;
     if ($debug) echo "<br><span style='font-size:9px; color:green;'> <b>DEBUG_SQL</b>: ".$query."</span>"; //debug queries
     $db=$this->initDB(); 
+    //vd($query); //debug
     $stmt = $db->prepare($query);
     $results = $stmt->execute();
     while ((strpos($query,"SELECT")!==false or strpos($query,"PRAGMA")!==false) 
