@@ -52,6 +52,7 @@ class DBIntrd {
     if ($debug) echo "<br><span style='font-size:9px; color:green;'> <b>DEBUG_SQL</b>: ".$query."</span>"; //debug queries
     $db=$this->initDB(); 
     //vd($query); //debug
+    //DIE;
     $stmt = $db->prepare($query);
     $results = $stmt->execute();
     while ((strpos($query,"SELECT")!==false or strpos($query,"PRAGMA")!==false) 
@@ -113,7 +114,7 @@ class data extends DBIntrd {
         }
       }
     } else if(strpos($this->id,"filter")!==false){
-      $filter=explode(":",$this->id);
+      $filter=explode("filter:",$this->id);
       $filter=$filter[1];
       $data = $this->getData(false,$filter); //fetch filtered data
       //$this->filtered = json_decode(json_encode($data), FALSE);
@@ -155,6 +156,7 @@ class data extends DBIntrd {
     if($filter){
       if (strpos($filter,"|")!==false){
         $filter=explode("|",$filter);
+        //vd($filter);
         $results=$this->queryDB("SELECT * FROM ".DBIntrd::$table." WHERE ".$filter[0]."='".$filter[1]."'");
       }else{
         $results=$this->queryDB("SELECT * FROM ".DBIntrd::$table." WHERE ".$filter); //special filter case
