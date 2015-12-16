@@ -113,6 +113,15 @@ class data extends DBIntrd {
           $this->{$column} = $value;
         }
       }
+    } else if(strpos($this->id,"custom")!==false){
+      $custom=explode("custom:",$this->id);
+      $custom=$custom[1];
+      $data = $this->getData(false,$filter=false,$custom); //fetch customized data
+      if ($data) {
+        foreach ($data as $column=>$value){
+          $this->{$column} = $value;
+        }
+      }
     } else if(strpos($this->id,"filter")!==false){
       $filter=explode("filter:",$this->id);
       $filter=$filter[1];
@@ -147,11 +156,14 @@ class data extends DBIntrd {
    * getData
    * @return object
    */
-  function getData($all=false,$filter=false) { 
+  function getData($all=false,$filter=false,$custom=false) { 
     //vd($this);
     //die;
     if($all){
       $results=$this->queryDB("SELECT * FROM ".DBIntrd::$table);
+    }
+    if($custom){
+      $results=$this->queryDB($custom); 
     }
     if($filter){
       if (strpos($filter,"|")!==false){
