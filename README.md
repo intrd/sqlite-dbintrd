@@ -101,6 +101,12 @@ vd($orders); //print data
 function vd($var){ 
   echo"<pre>";var_dump($var);echo"</pre>";
 }
+
+/**
+ * CUSTOM select sample..
+ */
+ $athletes = new data("athletes","custom:SELECT athletes.name,athletes.id,athletes.category FROM athletes WHERE active=1 and category='$category'",false);
+
 ```
 
 ### Todolist
