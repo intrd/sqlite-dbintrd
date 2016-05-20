@@ -19,74 +19,73 @@ And run..
 ```
 $ composer install -o #to install
 $ composer update -o #to update
-```
-Always use -o to rebuild autoload.
 
+Always use -o to rebuild autoload.
+```
 Now Composer Autoload will instance the class and you are able to use by this way..
 
 ```
 require __DIR__ . '/vendor/autoload.php';
 use database\dbintrd as db;
 
-$root=dirname(__FILE__)."/"; //root absolute path
-$db_path=$root.'data/sample.dat'; //path of SQLite sample.dat (sample database included)
+$root=dirname(__FILE__)."/"; 
+$db_path=$root.'vendor/intrd/sqlite-dbintrd/data/sample.dat'; //path of SQLite sample.dat (sample database included)
 $debug=true; //enable SQL queries debug
 
 /*
- * GET ALL
+ * GET all data from table=users
  */
-$users = new db("users","all"); //GET all data from table=users
+$users = new db("users","all"); 
 var_dump($users); //print data
 
 /*
- * GET ALL w/ CHILDS data
+ * GET all data from table=orders + CHILDS data
  */
-$users = new db("orders","all",true); //GET all data from table=orders
+$users = new db("orders","all",true); 
 var_dump($users); //print data
 
 /*
- * GET, SET and UPDATE...
+ * GET from tables=users, object where id=40, SET a different email and UPDATE
  */
-$user = new db("users",40); //CREATE an new object w/ database structure+data(table=users WHERE id=40)
-$user->{0}->email="newmail@dann.com.br"; //SET a different email to this user
-var_dump($user); //print data
-$user->save(true); //UPDATE this object on database (true = UPDATE, null or false = INSERT)
+$user = new db("users",40); 
+$user->{0}->email="newmail@dann.com.br"; 
+var_dump($user); 
+$user->save(true); 
 
 /*
- * SET and INSERT
+ * CREATE a fresh new object where table=users, SET a email and password and INSERT 
  */
-$user = new db("users"); //CREATE a fresh new object (table=users structure without data when second argument is null) 
-$user->email="another@dann.com.br"; //setting some data...
-$user->password="123"; //setting some data...
+$user = new db("users"); 
+$user->email="another@dann.com.br"; 
+$user->password="123"; 
 var_dump($user);
-$user->save(); //INSERT this object on database (null or false = INSERT, true = UPDATE)
+$user->save(); 
 
 /*
- * GET ALL w/ FILTER
+ * GET a object from table=users filtering where email=another@dann.com.br
  */
-$users = new db("users","filter:email|another@dann.com.br"); //GET an new object w/ database structure+data(table=users WHERE email=another@dann.com.br)
+$users = new db("users","filter:email|another@dann.com.br"); 
+var_dump($users); 
+
+/*
+ * GET a object from table=users w/ combined filtering (following SQLite sintaxe)
+ */
+$users = new db("users","filter:email='another@dann.com.br' and email='asd@dann.com.br'"); 
 var_dump($users); //print data
 
 /*
- * GET ALL w/ RAW FILTER
- */
-$users = new db("users","filter:email='another@dann.com.br' and email='asd@dann.com.br'"); //GET an new object w/ database structure+data(table=users WHERE email=another@dann.com.br and email='asd@dann.com.br')
-var_dump($users); //print data
-
-/*
- * GET w/ FILTER and CHILDS data
+ * GET a object from table=orders filtering and returning CHILDS
  */
 $orders = new db("orders","filter:qty|11",TRUE); 
-var_dump($orders); //print data
+var_dump($orders); 
 
 /**
- * CUSTOM select sample..
+ * FULL CUSTOM SELECT (following SQLite sintaxe)
  */
- $athletes = new db("athletes","custom:SELECT athletes.name,athletes.id,athletes.category FROM athletes WHERE active=1 and category='$category'",false);
-
+$users = new db("users","custom:SELECT users.email FROM users WHERE id=40",false);
 
 ```
 
 ## Todo list
 
-* SELECTS are propagating to Childs at application side, do the same at SQLite side w/ a single JOIN query to return child array objects (look nearby DBIntrd.php line 160) 
+* SELECTS are propagating to Childs at application side, do the same at SQLite side w/ a single JOIN query to return child array objects (look src/classes.php nearby line 123) 
