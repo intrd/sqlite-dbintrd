@@ -1,7 +1,7 @@
 <?php 
 /** @docbloc */
 
-namespace sqlite;
+namespace database;
 
 /**
  * DBIntrd SQLite3 database interface
