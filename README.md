@@ -35,8 +35,60 @@ $debug=true; //enable SQL queries debug
 /*
  * GET ALL
  */
-$users = new data("users","all"); //GET all data from table=users
+$users = new db::data("users","all"); //GET all data from table=users
 vd($users); //print data
+
+/*
+ * GET ALL w/ CHILDS data
+ */
+$users = new db::data("orders","all",true); //GET all data from table=orders
+vd($users); //print data
+
+/*
+ * GET, SET and UPDATE...
+ */
+$user = new db::data("users",40); //CREATE an new object w/ database structure+data(table=users WHERE id=40)
+$user->{0}->email="newmail@dann.com.br"; //SET a different email to this user
+vd($user); //print data
+$user->save(true); //UPDATE this object on database (true = UPDATE, null or false = INSERT)
+
+/*
+ * SET and INSERT
+ */
+$user = new db::data("users"); //CREATE a fresh new object (table=users structure without data when second argument is null) 
+$user->email="another@dann.com.br"; //setting some data...
+$user->password="123"; //setting some data...
+vd($user);
+$user->save(); //INSERT this object on database (null or false = INSERT, true = UPDATE)
+
+/*
+ * GET ALL w/ FILTER
+ */
+$users = new db::data("users","filter:email|another@dann.com.br"); //GET an new object w/ database structure+data(table=users WHERE email=another@dann.com.br)
+vd($users); //print data
+
+/*
+ * GET ALL w/ RAW FILTER
+ */
+$users = new db::data("users","filter:email='another@dann.com.br' and email='asd@dann.com.br'"); //GET an new object w/ database structure+data(table=users WHERE email=another@dann.com.br and email='asd@dann.com.br')
+vd($users); //print data
+
+/*
+ * GET w/ FILTER and CHILDS data
+ */
+$orders = new db::data("orders","filter:qty|11",TRUE); 
+vd($orders); //print data
+
+function vd($var){ 
+  echo"<pre>";var_dump($var);echo"</pre>";
+}
+
+/**
+ * CUSTOM select sample..
+ */
+ $athletes = new db::data("athletes","custom:SELECT athletes.name,athletes.id,athletes.category FROM athletes WHERE active=1 and category='$category'",false);
+
+
 ```
 
 ## Todo list
