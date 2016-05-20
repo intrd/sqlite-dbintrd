@@ -26,7 +26,7 @@ Now Composer Autoload will instance the class and you are able to use by this wa
 
 ```
 require __DIR__ . '/vendor/autoload.php';
-use sqlite\data as db;
+use database\data as db;
 
 $root=dirname(__FILE__)."/"; //root absolute path
 $db_path=$root.'data/sample.dat'; //path of SQLite sample.dat (sample database included)
