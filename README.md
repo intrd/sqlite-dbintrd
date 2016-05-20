@@ -68,7 +68,7 @@ $users = new db("users","filter:email|another@dann.com.br");
 var_dump($users); 
 
 /*
- * GET a object from table=users w/ combined filtering (following SQLite sintaxe)
+ * GET a object from table=users w/ combined filtering (following SQLite sintax)
  */
 $users = new db("users","filter:email='another@dann.com.br' and email='asd@dann.com.br'"); 
 var_dump($users); //print data
@@ -80,7 +80,7 @@ $orders = new db("orders","filter:qty|11",TRUE);
 var_dump($orders); 
 
 /**
- * FULL CUSTOM SELECT (following SQLite sintaxe)
+ * FULL CUSTOM SELECT (following SQLite sintax)
  */
 $users = new db("users","custom:SELECT users.email FROM users WHERE id=40",false);
 
