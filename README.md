@@ -1,4 +1,41 @@
-<!-- @docbloc -->
+<!-- docbloc -->
+<span id='docbloc'>
+DBIntrd - Simple PHP framework for SQLite3 databases. A magic way to automatically create objects and persists data at SQLite3 tables.
+<table>
+<tr>
+<th>Package</th>
+<td>intrd/sqlite-dbintrd</td>
+</tr>
+<tr>
+<th>Version</th>
+<td>2.0</td>
+</tr>
+<tr>
+<th>Tags</th>
+<td>php, sqlite, framework, database</td>
+</tr>
+<tr>
+<th>Project URL</th>
+<td>http://github.com/intrd/sqlite-dbintrd</td>
+</tr>
+<tr>
+<th>Author</th>
+<td>intrd (Danilo Salles) - http://dann.com.br</td>
+<tr>
+<th>Copyright</th>
+<td>(CC-BY-SA-4.0) 2016, intrd</td>
+</tr>
+<tr>
+<th>License</th>
+<td><a href='http://creativecommons.org/licenses/by-sa/4.0'>Creative Commons Attribution-ShareAlike 4.0</a></td>
+</tr>
+<tr>
+<th>Dependencies</th>
+<td> &#8226; php >=5.3.0</td>
+</tr>
+</table>
+</span>
+<!-- @docbloc 1.1 -->
 
 ## System & Composer installation
 ```
