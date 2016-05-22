@@ -32,7 +32,7 @@
         ],
         "post-package-update": [
             "wget https://www.adminer.org/latest-en.php -O data/adminer.php"
-        ],
+        ]
     },
     "extra": {
         "author_twitter":"intrd",
