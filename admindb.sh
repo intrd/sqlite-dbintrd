@@ -13,4 +13,4 @@
 # - php >=5.3.0
 ## @docbloc 1.1
 
-php -S 0.0.0.0:8000 -t data/index.php
+php -S 0.0.0.0:8000 -t dba/
