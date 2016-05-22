@@ -20,6 +20,14 @@
             "database\\":"src/"
         }
     },
+    "scripts": {
+        "post-install-cmd": [
+            "wget https://www.adminer.org/latest-en.php -O data/adminer.php"
+        ],
+        "post-update-cmd": [
+            "wget https://www.adminer.org/latest-en.php -O data/adminer.php"
+        ]
+    },
     "extra": {
         "author_twitter":"intrd",
         "copyright_author":"intrd",

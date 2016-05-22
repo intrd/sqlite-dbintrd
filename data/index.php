@@ -15,6 +15,6 @@
 
 if (1==1 //1==1 = whitelist disabled
 	or $_SERVER['REMOTE_ADDR']=="192.168.0.103"){ //whitelist
-	include_once("../vendor/vrana/adminer/adminer/index.php"); //calling adminer
+	require("adminer.php"); //calling adminer
 }
 ?>
