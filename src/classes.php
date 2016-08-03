@@ -21,10 +21,12 @@ class DBI {
     //$this->open($db_path);
     $db = new \SQLite3($db_path);
     if (!$db) die ("db error..");
+    $db->busyTimeout(5000);
       return $db;
   }
   function stopDB($db) {
     $db->close();
+    unset($db);
   }
   function queryDB($query) {
     global $debug;
