@@ -34,6 +34,7 @@ class DBIntrd {
     global $db_path;
     $db = new SQLite3($db_path);
     if (!$db) die ("db error..");
+    $db->busyTimeout(5000);
     return $db;
   }
   /**
@@ -42,6 +43,7 @@ class DBIntrd {
    */
   function stopDB($db) {
     $db->close();
+    unset($db);
   }
   /**
    * queryDB
